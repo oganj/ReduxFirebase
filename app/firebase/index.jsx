@@ -4,12 +4,13 @@ try{
   
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDwHm2bKEp16EKo7_1PGIQYjbhPtJmLWtU",
-    authDomain: "mead-todo-app-6cd5f.firebaseapp.com",
-    databaseURL: "https://mead-todo-app-6cd5f.firebaseio.com",
-    storageBucket: "mead-todo-app-6cd5f.appspot.com",
-    messagingSenderId: "783147967240"
+    apiKey: PROCESS_ENV_WEBPACK_PLUGIN.API_KEY,
+    authDomain: PROCESS_ENV_WEBPACK_PLUGIN.AUTH_DOMAIN,
+    databaseURL: PROCESS_ENV_WEBPACK_PLUGIN.DATABASE_URL,
+    storageBucket: PROCESS_ENV_WEBPACK_PLUGIN.STORAGE_BUCKET,
+    messagingSenderId: PROCESS_ENV_WEBPACK_PLUGIN.MESSAGING_SENDERE_ID
   };
+
   firebase.initializeApp(config); 
 
 } catch(e){
