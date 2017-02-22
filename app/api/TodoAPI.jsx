@@ -20,6 +20,8 @@ module.exports = {
     return $.isArray(todos) ? todos : [];
   },
   filterTodos: function (todos, showCompleted, searchText) {
+    
+    if (!todos) { return [];}
     var filteredTodos = todos;
 
     // Filter by showCompleted
@@ -29,6 +31,7 @@ module.exports = {
 
     // Filter by searchText
     filteredTodos = filteredTodos.filter((todo) => {
+      if (todo.text === undefined) { return true;}
       var text = todo.text.toLowerCase();
       return searchText.length === 0 || text.indexOf(searchText) > -1;
     });
